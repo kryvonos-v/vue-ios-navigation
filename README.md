@@ -1,5 +1,9 @@
 # ios-navigation
 
+Vue.js implementation of iOS-like transition between screens.
+
+![Vue.js implementation of iOS-like transition between screens](https://i.ibb.co/9rQdsHP/ezgif-com-video-to-gif.gif)
+
 ## Project setup
 ```
 npm install
