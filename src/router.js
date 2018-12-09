@@ -38,7 +38,11 @@ let router = new Router({
         {
           path: 'user/:id',
           component: UserView,
-          props: true
+          props: true,
+          meta: {
+            // Just to show that navigationTransition accepts functions as well
+            navigationTransition: () => true
+          }
         }
       ]
     },

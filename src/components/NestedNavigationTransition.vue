@@ -7,6 +7,12 @@
 <script>
 import * as TransitionName from '@/shared/enums/TransitionName'
 
+function routeNavigationTransitionValue (route) {
+  return typeof route.meta.navigationTransition === 'function'
+    ? route.meta.navigationTransition()
+    : route.meta.navigationTransition
+}
+
 export default {
   data () {
     return {
@@ -27,8 +33,8 @@ export default {
   watch: {
     '$route' (to, from) {
       let noTransition = (
-        to.meta.navigationTransition === false &&
-        from.meta.navigationTransition === false
+        routeNavigationTransitionValue(to) === false &&
+        routeNavigationTransitionValue(from) === false
       )
 
       if (noTransition) {
