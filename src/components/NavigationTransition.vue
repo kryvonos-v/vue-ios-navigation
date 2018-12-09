@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transitionName">
+  <transition :name="transitionName" :css="true">
     <slot />
   </transition>
 </template>
