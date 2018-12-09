@@ -11,6 +11,11 @@
     <noscript>
       <strong>We're sorry but ios-navigation doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <script>
+      var beforeVueRouterPopstateEvent = new Event('before-vue-router-popstate')
+
+      window.addEventListener('popstate', () => window.dispatchEvent(beforeVueRouterPopstateEvent))
+    </script>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
