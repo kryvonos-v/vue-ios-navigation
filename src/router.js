@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import MessagesView from './views/MessagesView.vue'
 import UserView from './views/UserView.vue'
+import TestView from './views/TestView.vue'
 import AppLayout from './AppLayout.vue'
 
 Vue.use(Router)
@@ -39,6 +40,10 @@ let router = new Router({
     {
       path: '/messages',
       component: MessagesView
+    },
+    {
+      path: '/test',
+      component: TestView
     }
   ]
 })

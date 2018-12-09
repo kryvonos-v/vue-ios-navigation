@@ -1,41 +1,17 @@
 <template>
   <div id="app" class="page">
-    <transition :name="transitionName">
-      <router-view></router-view>
-    </transition>
+    <navigation-transition>
+      <router-view class="page__main"></router-view>
+    </navigation-transition>
   </div>
 </template>
 
 <script>
-import * as TransitionName from './shared/enums/TransitionName'
+import NavigationTransition from './components/NavigationTransition.vue'
 
 export default {
-  data () {
-    return {
-      transitionName: TransitionName.SLIDE_LEFT,
-      startedNavigationBack: false
-    }
-  },
-  watch: {
-    '$route' () {
-      if (!this.startedNavigationBack) {
-        this.transitionName = TransitionName.SLIDE_LEFT
-      }
-
-      this.startedNavigationBack = false
-    }
-  },
-  created () {
-    window.addEventListener('before-vue-router-popstate', this.handleUserNavigatesBack)
-  },
-  beforeDestroy () {
-    window.removeEventListener('before-vue-router-popstate', this.handleUserNavigatesBack)
-  },
-  methods: {
-    handleUserNavigatesBack () {
-      this.startedNavigationBack = true
-      this.transitionName = TransitionName.SLIDE_RIGHT
-    }
+  components: {
+    NavigationTransition
   }
 }
 </script>
@@ -91,37 +67,5 @@ body, html {
 
 .main-nav__link.router-link-exact-active {
   color: #007AFF;
-}
-
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: all 200ms ease-in-out;
-}
-
-.slide-left-enter-active,
-.slide-right-enter-active {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.slide-left-leave-to {
-  transform: translateX(-100%);
-}
-
-.slide-left-enter {
-  transform: translateX(100%);
-}
-
-.slide-right-leave-to {
-  transform: translateX(100%);
-}
-
-.slide-right-enter {
-  transform: translateX(-100%);
 }
 </style>

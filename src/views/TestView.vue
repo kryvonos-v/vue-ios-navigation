@@ -1,7 +1,6 @@
 <template>
   <div style="background-color: #f0f0f0;">
-    <h1>Messages</h1>
-    <router-link to="/test">Test page</router-link><br>
+    <h1>Test view</h1>
     <a @click="$router.go(-1)">Go Back</a>
   </div>
 </template>
