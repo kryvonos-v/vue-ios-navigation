@@ -23,18 +23,21 @@ let router = new Router({
         {
           path: 'feed',
           alias: '',
-          component: Home
+          component: Home,
+          meta: {
+            navigationTransition: false
+          }
         },
         {
           path: 'about',
-          component: About
+          component: About,
+          meta: {
+            navigationTransition: false
+          }
         },
         {
           path: 'user/:id',
           component: UserView,
-          meta: {
-            transition: true
-          },
           props: true
         }
       ]
@@ -49,10 +52,7 @@ let router = new Router({
         },
         {
           path: 'new',
-          component: NewMessageView,
-          meta: {
-            transition: true
-          }
+          component: NewMessageView
         }
       ]
     },

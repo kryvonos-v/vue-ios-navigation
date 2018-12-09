@@ -26,9 +26,12 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      let useTransition = to.meta.transition || (this.navigatingBack && from.meta.transition)
+      let noTransition = (
+        to.meta.navigationTransition === false &&
+        from.meta.navigationTransition === false
+      )
 
-      if (!useTransition) {
+      if (noTransition) {
         this.transitionName = TransitionName.NONE
       } else if (!this.navigatingBack) {
         this.transitionName = TransitionName.SOFT_SLIDE_LEFT
