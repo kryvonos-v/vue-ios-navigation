@@ -1,9 +1,7 @@
 <template>
-  <div id="app" class="page">
-    <navigation-transition>
-      <router-view class="page__main"></router-view>
-    </navigation-transition>
-  </div>
+  <navigation-transition>
+    <router-view class="app"></router-view>
+  </navigation-transition>
 </template>
 
 <script>
@@ -17,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
