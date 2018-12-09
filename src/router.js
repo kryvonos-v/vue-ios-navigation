@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
+import MessagesLayout from '@/views/MessagesLayout.vue'
 import MessagesView from './views/MessagesView.vue'
+import NewMessageView from './views/NewMessageView.vue'
 import UserView from './views/UserView.vue'
 import TestView from './views/TestView.vue'
 import AppLayout from './AppLayout.vue'
@@ -39,7 +41,20 @@ let router = new Router({
     },
     {
       path: '/messages',
-      component: MessagesView
+      component: MessagesLayout,
+      children: [
+        {
+          path: '',
+          component: MessagesView
+        },
+        {
+          path: 'new',
+          component: NewMessageView,
+          meta: {
+            transition: true
+          }
+        }
+      ]
     },
     {
       path: '/test',
