@@ -1,6 +1,8 @@
 <template>
   <div class="page">
-    <action-bar class="page__top">{{ id }}</action-bar>
+    <action-bar class="page__top" :show-back-button="true">
+      <span class="mx-auto">{{ id }}</span>
+    </action-bar>
     <div class="page__main">
       <h1>User info</h1>
       <a @click="$router.go(-1)">Go Back</a>

@@ -41,7 +41,7 @@ let router = new Router({
           props: true,
           meta: {
             // Just to show that navigationTransition accepts functions as well
-            navigationTransition: () => true
+            navigationTransition: () => false
           }
         }
       ]
