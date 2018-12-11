@@ -61,6 +61,7 @@ body, html {
   border-top: 1px solid rgb(189, 189, 189);
   padding-top: 11px;
   padding-bottom: 13px;
+  background-color: #FFF;
 }
 
 .main-nav__link {
